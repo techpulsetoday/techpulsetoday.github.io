@@ -1,36 +1,27 @@
 # Site
-name: "Mediumish"
-title: "Mediumish"
-description: "Jekyll template, Medium styled, free for bloggers."
+name: "TechPulseToday"
+title: "TechPulseToday"
+description: "Taking Web Out Of The Box"
 logo: 'assets/images/logo.png'
-favicon: 'assets/images/logo.png'
+favicon: 'assets/images/favicon.png'
 baseurl: ''
-url: "https://techpulsetoday.github.io"
+url: "https://www.techpulsetoday.com"
 google_analytics: 'UA-132191865-1'
-disqus: 'demowebsite'
-mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
+disqus: 'techpulsetoday'
+mailchimp-list: 'https://techpulsetoday.us3.list-manage.com/subscribe/post?u=87d0cb708fb9dc3a0a2baeb94&id=de6efaf6d4'
 include: ["_pages"]
 permalink: /:title/
 
 # Authors
 authors:
-  sal:
-    name: Sal
-    display_name: Sal
-    gravatar: e56154546cf4be74e393c62d1ae9f9d4
-    email: wowthemesnet@gmail.com
-    web: https://www.wowthemes.net
-    twitter: https://twitter.com/wowthemesnet
-    description: "Author of Mediumish, a Bootstrap Medium styled template available for WordPress, HTML, Ghost and Jekyll. You are currently previewing Jekyll template demo."
-  john:
-    name: John
-    display_name: John    
-    avatar: 'assets/images/avatar.png'
-    gravatar: b1cc14991db7a456fcd761680bbc8f81
-    email: wowthemesnet@gmail.com
-    web: https://www.wowthemes.net
-    twitter: https://twitter.com/wowthemesnet
-    description: "This is the author box. Write a short description of the author here. You are currently previewing Mediumish demo, a Jekyll template compatible with Github pages."
+  vijayan:
+    name: Vijayan
+    display_name: Vijayan
+    gravatar: 45014b6c845c622ea05e73ffb9927d6a
+    email: techpulsetoday@gmail.com
+    web: https://in.linkedin.com/in/viji5052
+    twitter: https://twitter.com/techpulsetoday
+    description: "Thanks for stopping by guys! I'm Vijayan and Techpulse is my beloved brainchild. Currently working as a PHP developer in a digital marketing start-up, I'm overly passionate about not just learning new things but also putting those into practice. I swear by a quote I once came across... 'What separates successful people from unsuccessful people is the former's ability to execute'. Feel free to reach out to me if you have any questions, suggestions or feedback. Hoping to see more of you here!"
 
 # Plugins
 plugins:
@@ -40,7 +31,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-archives
   - jekyll-gist
-    
+
 # Archives
 jekyll-archives:
   enabled:
@@ -48,11 +39,11 @@ jekyll-archives:
   layout: archive
   permalinks:
     category: '/category/:name/'
-    
-# Pagination 
+
+# Pagination
 paginate: 6
 paginate_path: /page:num/
-    
+
 # Other
 markdown: kramdown
 
