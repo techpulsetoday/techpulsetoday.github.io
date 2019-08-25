@@ -6,19 +6,25 @@ categories: [ Linux ]
 tags: [ Apache, gzip compression, Nginx]
 image: assets/images/2017/04/gzip-compression.jpg
 description: "GZip compression all files like HTML, JS and CSS files while serving the request to the browser it doesn't make any difference what the file type is or the encoding."
+toc: true
 ---
-<h2>What is Gzip compression?</h2>
-GZip Compression (compress) all files like HTML, JS and CSS files while serving the request to the browser; it doesn't make any difference what the file type is or the encoding. As a size of the file is reduced it is served to the user in a faster manner. Not all the browser support compression but now all the modern browser support. It is highly recommended, but only one part is that it increases the CPU usages of the server which may be concern sometime. Using Gzip with client side caching will help in increasing the performance.
-<h2>How to enable Gzip compression?</h2>
-Here are the most common ways to enable gzip compression including .<strong>htaccess</strong>, <a href="/create-apache-virtual-host-ubuntu/"><strong>Apache</strong></a>, and <strong>Nginx</strong> web servers.
-<h2>For Apache:</h2>
-<ol>
- 	<li>mod_deflate (recommended way)</li>
- 	<li>mod_gzip</li>
-</ol>
-You will need to add the following lines to your .<strong><em>htaccess</em></strong> file:
-<h3>mod_deflate Method:</h3>
-<pre class="lang:default decode:true" title="mod_deflate">&lt;IfModule mod_deflate.c&gt;
+GZip Compression (compress) all files like HTML, JS and CSS files while serving the request to the browser; it doesn’t make any difference what the file type is or the encoding. As a size of the file is reduced it is served to the user in a faster manner. Not all the browser support compression but now all the modern browser support. It is highly recommended, but only one part is that it increases the CPU usages of the server which may be concern sometime. Using Gzip with client side caching will help in increasing the performance.
+
+### How to enable Gzip compression
+
+Here are the most common ways to enable gzip compression including **.htaccess**, **[Apache](/create-apache-virtual-host-ubuntu/)**, and **Nginx** web servers.
+
+### For Apache
+
+1. mod_deflate (recommended way)
+2. mod_gzip
+
+You will need to add the following lines to your **`.htaccess`** file:
+
+#### mod_deflate Method
+
+```bash
+<IfModule mod_deflate.c>
   # Compress HTML, CSS, JavaScript, Text, XML and fonts
   AddOutputFilterByType DEFLATE application/javascript
   AddOutputFilterByType DEFLATE application/rss+xml
@@ -47,10 +53,15 @@ You will need to add the following lines to your .<strong><em>htaccess</em></str
   BrowserMatch ^Mozilla/4\.0[678] no-gzip
   BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
   Header append Vary User-Agent
-&lt;/IfModule&gt;</pre>
-<h3>mod_gzip Method:</h3>
-Make sure <em><strong>mod_gzip</strong></em> module should be enabled.
-<pre class="lang:default decode:true " title="mod_gzip">&lt;ifModule mod_gzip.c&gt;
+</IfModule>
+```
+
+#### mod_gzip Method
+
+Make sure **mod_gzip** module should be enabled.
+
+```bash
+<ifModule mod_gzip.c>
 mod_gzip_on Yes
 mod_gzip_dechunk Yes
 mod_gzip_item_include file \.(html?|txt|css|js|php|pl)$
@@ -59,10 +70,15 @@ mod_gzip_item_include mime ^text/.*
 mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
 mod_gzip_item_exclude mime ^image/.*
 mod_gzip_item_include handler ^cgi-script$
-&lt;/ifModule&gt;</pre>
-<h2>For Nginx:</h2>
-Create a file at <strong>/etc/nginx/conf.d/gzip.conf</strong> with the following content:
-<pre class="lang:default decode:true" title="Nginx">  # Gzip Compression
+</ifModule>
+```
+
+### For Nginx
+
+Create a file at **/etc/nginx/conf.d/gzip.conf** with the following content:
+
+```bash
+# Gzip Compression
 
   # Enable Gzip compressed.
   gzip on;
@@ -107,9 +123,17 @@ Create a file at <strong>/etc/nginx/conf.d/gzip.conf</strong> with the following
     text/css
     text/plain
     text/x-component;
-  # text/html is always compressed by HttpGzipModule</pre>
-<h3>Restart Nginx:</h3>
-You can use the Forge Nginx restart dropdown, but since you're SSH'ed in you can also just run <strong>sudo service nginx restart</strong>.
-<h2>To test if gzip compression is enabled, run:</h2>
-<pre class="lang:default decode:true ">curl -H "Accept-Encoding: gzip" -I https://www.techpulsetoday.com/</pre>
-You should see <strong>content-encoding: gzip</strong>
+  # text/html is always compressed by HttpGzipModule
+  ```
+
+#### Restart Nginx
+
+You can use the Forge Nginx restart dropdown, but since you’re SSH’ed in you can also just run `sudo service nginx restart`.
+
+### To test if gzip compression is enabled, run
+
+```bash
+curl -H "Accept-Encoding: gzip" -I https://www.techpulsetoday.com/
+```
+
+You should see **content-encoding: gzip**

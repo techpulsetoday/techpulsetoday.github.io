@@ -6,169 +6,206 @@ categories: [ Linux ]
 tags: [ Apache, Linux Tips, Server, Virtual Host ]
 image: assets/images/2017/03/vitual-host.png
 description: "How To Create Apache Virtual Host in Ubuntu. This article will help you to create Virtual hosts in Apache2 server on Ubuntu systems."
+toc: true
 ---
-<h2>Install the Apache Web Server</h2>
-Before Create Apache Virtual Host files, we need to check in your system whether Apache Server installed or not. If it is installed no need to anything. If it is not installed type the following commands.
+Before Create Apache Virtual Host files, we need to check in your system whether Apache Server installed or not. If it is installed no need to anything. If it is not installed type the following commands.
 
-<pre class="lang:default decode:true" title="Install the Apache WebServer">sudo apt-get update
-sudo apt-get install apache2</pre>
+```bash
+sudo apt-get update
+sudo apt-get install apache2
+```
 
-After installing Apache Server, Let's test whether the web server is working properly or not by navigating to the URL <strong><a href="https://www.techpulsetoday.com/">http://ip-address/</a> or <a href="https://www.techpulsetoday.com/">http://localhost/</a>. </strong>It will open Apache Ubuntu Default Page.
+After installing Apache Server, Let’s test whether the web server is working properly or not by navigating to the URL **<http://ip-address/>** or **<http://localhost/>**. It will open Apache Ubuntu Default Page.
 
-<h2>Create  a Virtual Directories</h2>
+### Create  a Virtual Directories
 
 Create a directory in root folder (ie. public_html folder)
 
-<pre class="lang:default decode:true" title="Create a Directories">cd /var/www/html/
+```bash
+cd /var/www/html/
 sudo mkdir dev1.techpulsetoday.com
-sudo mkdir dev2.techpulsetoday.com</pre>
+sudo mkdir dev2.techpulsetoday.com
+```
 
-<h2>Create a Demo Pages</h2>
+### Create a Demo Pages
 
-Create an <strong>index.html</strong> file in nano or vim editor by typing,
+Create an `index.html` file in nano or vim editor by typing,
 
-<pre class="lang:default decode:true" title="Create an index.html">sudo nano dev1.techpulsetoday.com/index.html</pre>
+```bash
+sudo nano dev1.techpulsetoday.com/index.html
+```
 
-<pre class="lang:default decode:true" title="html h1 tag">&lt;h1&gt;Good! dev1.techpulsetoday.com Virtual Host is Working fine!&lt;/h1&gt;</pre>
+```html
+<h1>Good! dev1.techpulsetoday.com Virtual Host is Working fine!</h1>
+```
 
 Do the same thing for Virtual Host Directory 2
 
-<pre class="lang:default decode:true" title="Create an index.html">sudo nano dev2.techpulsetoday.com/index.html</pre>
+```bash
+sudo nano dev2.techpulsetoday.com/index.html
+```
 
-<pre class="lang:default decode:true" title="html h1 tag">&lt;h1&gt;Good! dev2.techpulsetoday.com Virtual Host is Working fine!&lt;/h1&gt;</pre>
+```html
+<h1>Good! dev2.techpulsetoday.com Virtual Host is Working fine!</h1>
+```
 
-<h2>Give the Proper Ownership and Permissions</h2>
+### Give the Proper Ownership and Permissions
 
 Navigate to corresponding Virtual Host Directory and then run the below commands.
 
-ie. <em><strong>cd /var/www/html/dev1.techpulsetoday.com/ and cd /var/www/html/dev2.techpulsetoday.com/</strong></em>
+ie. `cd /var/www/html/dev1.techpulsetoday.com/` and `cd /var/www/html/dev2.techpulsetoday.com/`
 
-<pre class="lang:default decode:true" title="Ownership and Permissions">sudo chown www-data:www-data -R *
+```bash
+sudo chown www-data:www-data -R *
 sudo find . -type d -exec chmod 755 {} \;
-sudo find . -type f -exec chmod 644 {} \;</pre>
+sudo find . -type f -exec chmod 644 {} \;
+```
 
-<h2>Create Virtual Host Files</h2>
+### Create Virtual Host Files
 
-By default, Apache comes with a default virtual host file called <em><strong>000-default.conf</strong></em>. We will copy the <em><strong>000-default.conf</strong></em> file contents or Create a new Virtual Host files.
+By default, Apache comes with a default virtual host file called `000-default.conf`. We will copy the `000-default.conf` file contents or Create a new Virtual Host files.
 
-<pre class="lang:default decode:true" title="Diretory">vijayan@vijayan-VPCCA35FA:/var/www/html/dev1.techpulsetoday.com$ cd /etc/apache2/sites-available/
+```bash
+vijayan@vijayan-VPCCA35FA:/var/www/html/dev1.techpulsetoday.com$ cd /etc/apache2/sites-available/
 vijayan@vijayan-VPCCA35FA:/etc/apache2/sites-available$ pwd
 /etc/apache2/sites-available
 vijayan@vijayan-VPCCA35FA:/etc/apache2/sites-available$ ls
 000-default.conf
-vijayan@vijayan-VPCCA35FA:/etc/apache2/sites-available$</pre>
+vijayan@vijayan-VPCCA35FA:/etc/apache2/sites-available$
+```
 
-Now you are in this location -&gt; <em><strong>/etc/apache2/sites-available</strong></em>
+Now you are in this location -> `/etc/apache2/sites-available`
 
-<pre class="lang:default decode:true" title="Create Files">sudo touch dev1.techpulsetoday.com.conf
-sudo touch dev2.techpulsetoday.com.conf</pre>
+```bash
+sudo touch dev1.techpulsetoday.com.conf
+sudo touch dev2.techpulsetoday.com.conf
+```
 
-Make sure the Virtual Host files contains <em><strong>.conf</strong></em> extension at the end.
+Make sure the Virtual Host files contains .conf extension at the end.
 
-Now open <strong>dev1.techpulsetoday.com.conf, </strong>nano or vim editor by typing
+Now open `dev1.techpulsetoday.com.conf`, nano or vim editor by typing
 
-<pre class="lang:default decode:true" title="Edit dev1.techpulsetoday.com.conf file">sudo nano dev1.techpulsetoday.com.conf</pre>
+```bash
+sudo nano dev1.techpulsetoday.com.conf
+```
 
 Copy paste bellow code.
 
-<pre class="lang:default decode:true" title="Configuration">&lt;VirtualHost *:80&gt;
+```bash
+<VirtualHost *:80>
         ServerName dev1.techpulsetoday.com
         ServerAlias www.dev1.techpulsetoday.com
         ServerAdmin vijayan@techpulsetoday.com
         DocumentRoot /var/www/html/dev1.techpulsetoday.com
-&lt;Directory "/var/www/html/dev1.techpulsetoday.com"&gt;
+<Directory "/var/www/html/dev1.techpulsetoday.com">
     AllowOverride All
     Order allow,deny
     Allow from all
-&lt;/Directory&gt;
+</Directory>
         ErrorLog ${APACHE_LOG_DIR}/error.log
         CustomLog ${APACHE_LOG_DIR}/access.log combined
-&lt;/VirtualHost&gt;</pre>
+</VirtualHost>
+```
 
-Likewise, open <strong>dev2.techpulsetoday.com.conf, </strong>nano or vim editor by typing
+Likewise, open `dev2.techpulsetoday.com.conf`, nano or vim editor by typing
 
-<pre class="lang:default decode:true" title="Edit dev2.techpulsetoday.com.conf file">sudo nano dev2.techpulsetoday.com.conf</pre>
+```bash
+sudo nano dev2.techpulsetoday.com.conf
+```
 
 Copy paste bellow code.
 
-<pre class="lang:default decode:true" title="Configuration">&lt;VirtualHost *:80&gt;
+```bash
+<VirtualHost *:80>
         ServerName dev2.techpulsetoday.com
         ServerAlias www.dev2.techpulsetoday.com
         ServerAdmin vijayan@techpulsetoday.com
         DocumentRoot /var/www/html/dev2.techpulsetoday.com
-&lt;Directory "/var/www/html/dev2.techpulsetoday.com"&gt;
+<Directory "/var/www/html/dev2.techpulsetoday.com">
     AllowOverride All
     Order allow,deny
     Allow from all
-&lt;/Directory&gt;
+</Directory>
         ErrorLog ${APACHE_LOG_DIR}/error.log
         CustomLog ${APACHE_LOG_DIR}/access.log combined
-&lt;/VirtualHost&gt;</pre>
+</VirtualHost>
+```
 
-<h2>Check Virtual Host Configuration Syntax</h2>
+### Check Virtual Host Configuration Syntax
 
 To check configuration files for syntax errors:
 
-<pre class="lang:default decode:true" title="check configuration files for syntax errors"># Fedora, RHEL, CentOS, OSX
+```bash
+# Fedora, RHEL, CentOS, OSX
 httpd -t
 
 # Debian, Ubuntu
 apache2ctl -t
 
 # MacOS
-apachectl -t</pre>
+apachectl -t
+```
 
 To list all Virtual Hosts and their locations:
 
-<pre class="lang:default decode:true" title="list all Virtual Hosts and their locations"># Fedora, RHEL, CentOS, OSX
+```bash
+# Fedora, RHEL, CentOS, OSX
 httpd -S
 
 # Debian, Ubuntu
 apache2ctl -S
 
 # MacOS
-apachectl -S</pre>
+apachectl -S
+```
 
-<h2>Enable the Newly Created Virtual Host Files</h2>
+### Enable the Newly Created Virtual Host Files
 
-<pre class="lang:default decode:true" title="a2ensite files">sudo a2ensite dev1.techpulsetoday.com.conf
-sudo a2ensite dev2.techpulsetoday.com.conf</pre>
+```bash
+sudo a2ensite dev1.techpulsetoday.com.conf
+sudo a2ensite dev2.techpulsetoday.com.conf
+```
 
 After Enabling Virtual Host, you need to restart Apache Server.
 
-<pre class="lang:default decode:true" title="Restart Apache"># In Ubuntu 15.10/15.04:
+```bash
+# In Ubuntu 15.10/15.04:
 sudo systemctl restart apache2
 
 # In Ubuntu 14.10 and earlier versions:
-sudo service apache2 restart</pre>
+sudo service apache2 restart
+```
 
-<h2>Setup Local Host Files</h2>
+### Setup Local Host Files
 
 Edit file, /etc/hosts,
 
-<pre class="lang:default decode:true" title="Edit Local Host File">sudo nano /etc/hosts</pre>
+```bash
+sudo nano /etc/hosts
+```
 
 Add the Virtual Domain Names one by one as shown below
 
-<pre class="lang:default decode:true" title="Local Host File">#####################################
+```bash
+#####################################
 # Virtual Host
 #####################################
 127.0.1.1       dev1.techpulsetoday.com
 127.0.1.1       dev2.techpulsetoday.com
-</pre>
+```
 
 restart your apache if require.
 
-<h2>Test your Results</h2>
+### Test your Results
 
-Open your browser and type URL http://dev1.techpulsetoday.com/ and http://dev2.techpulsetoday.com/
+Open your browser and type URL `http://dev1.techpulsetoday.com/` and `http://dev2.techpulsetoday.com/`
 
-<h3><span style="color: #073c65;">dev1.techpulsetoday.com Page</span></h3>
+dev1.techpulsetoday.com Page
 
-<img class="aligncenter size-full wp-image-368" src="/assets/images/2017/03/dev1.techpulsetoday.com_.png" alt="dev1.techpulsetoday.com" width="1365" height="208" />
+![dev1.techpulsetoday.com](/assets/images/2017/03/dev1.techpulsetoday.com_.png "dev1.techpulsetoday.com")
 
-<h3><span style="color: #073c65;">dev2.techpulsetoday.com Page</span></h3>
+dev2.techpulsetoday.com Page
 
-<img class="aligncenter size-full wp-image-369" src="/assets/images/2017/03/dev2.techpulsetoday.com_.png" alt="dev2.techpulsetoday.com" width="1365" height="197" />
+![dev2.techpulsetoday.com](/assets/images/2017/03/dev2.techpulsetoday.com_.png "dev2.techpulsetoday.com")
 
-If both of these sites work, you've successfully configured two Virtual Hosts on the same Server.
+If both of these sites work, you’ve successfully configured two Virtual Hosts on the same Server.

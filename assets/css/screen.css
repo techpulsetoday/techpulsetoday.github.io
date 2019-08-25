@@ -1,7 +1,7 @@
-/* 
-Template Name: Mediumish 
-Copyright: Sal, WowThemes.net, https://www.wowthemes.net 
-License: https://www.wowthemes.net/freebies-license/ 
+/*
+Template Name: Mediumish
+Copyright: Sal, WowThemes.net, https://www.wowthemes.net
+License: https://www.wowthemes.net/freebies-license/
 */
 @media screen and (min-width:1500px) {
     html { font-size:18px; } /* Increase the font size on higher resolutions */
@@ -898,4 +898,23 @@ iframe {
 .lazyimg[data-srcset] {
     opacity: 0;
     transition: opacity .25s;
+}
+
+/** Minimal CSS for tables **/
+table {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    line-height: 2.5;
+}
+
+thead {
+    border-bottom: 2px solid rgba(0, 0, 0, .44);
+}
+
+td, th{
+    padding-left:8px;
+}
+
+tr:nth-of-type(2n){
+    background-color: rgba(0,0,0, 0.03);
 }

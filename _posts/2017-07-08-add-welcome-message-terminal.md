@@ -11,26 +11,32 @@ This tip will show you how you can easily add a welcome message to your terminal
 
 Here are the steps to follow:
 
-Step 1:
+**Step 1:**
 You need to install figlet. So open the terminal and type the following command:
 
-<strong>sudo apt-get install figlet</strong>
+```bash
+sudo apt-get install figlet
+```
 
 Then press Enter.
 
-Step 2:
-Open <strong><em>.bashrc</em></strong> in Vim editor and get into insert mode.
+**Step 2:**
+Open `.bashrc` in Vim editor and get into insert mode.
 
-<strong>vim ~/.bashrc</strong>
+```bash
+vim ~/.bashrc
+```
 
-Step 3:
-Enter the following command in <em><strong>.bashrc</strong></em>:
+**Step 3:**
+Enter the following command in `.bashrc`:
 
-<strong>figletx -c your-message</strong>
+```bash
+figletx -c your-message
+```
 
 Save and exit.
 
-Step 4:
+**Step 4:**
 Now, when you open your terminal, you can see your welcome message.
 
-To make your message more interesting, try using ASCII art. I recommend this website to generate ASCII art – <a href="http://ascii.mastervb.net">ascii.mastervb.net</a>
+To make your message more interesting, try using ASCII art. I recommend this website to generate ASCII art – [ascii.mastervb.net](http://ascii.mastervb.net){:target="_blank"}

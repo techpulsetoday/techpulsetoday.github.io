@@ -1,14 +1,13 @@
 ---
 layout: page
-title: Mediumish Template for Jekyll
+title: About
 permalink: /about
 comments: true
 ---
-
 <div class="row justify-content-between">
 <div class="col-md-8 pr-5">
 
-<p>This website is built with Jekyll and Mediumish template for Jekyll. It's for demonstration purposes, no real content can be found. Mediumish template for Jekyll is compatible with Github pages, in fact even this demo is created with Github Pages and hosted with Github.</p>
+<p>Thanks for stopping by guys! I'm Vijayan and Techpulse is my beloved brainchild. Currently working as a PHP developer in a digital marketing start-up, I'm overly passionate about not just learning new things but also putting those into practice. I swear by a quote I once came across... 'What separates successful people from unsuccessful people is the former's ability to execute'. Feel free to reach out to me if you have any questions, suggestions or feedback. Hoping to see more of you here!</p>
 
 <p class="mb-5"><img class="shadow-lg" src="{{site.baseurl}}/assets/images/mediumish-jekyll-template.png" alt="jekyll template mediumish" /></p>
 <h4>Documentation</h4>
