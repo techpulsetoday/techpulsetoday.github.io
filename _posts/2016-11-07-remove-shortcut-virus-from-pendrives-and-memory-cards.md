@@ -7,7 +7,7 @@ tags: [ Tips and Tricks, Windows ]
 image: assets/images/2016/12/command.png
 description: "Insert pen drives and memory card in USB port for the data transfer,then the files in your pen drive and memory cards turn into shortcut virus."
 ---
-So many people are facing the same problem of the Shortcut Virus in their pen drive.  Sometimes when we insert pen drives and memory card in a USB port for the data transfer, then the files in your pen drive and memory cards turns into shortcut virus. This  is the most common problem for all. We see this virus in the systems which have anti-virus installed. When your PC, pen drive and memory cards got affected by any malware, then it will change all your original files into folders. So many people will face this problem. We can easily remove shortcut virus from [Pendrive](https://www.techpulsetoday.com/), just follow the bellow steps.
+So many people are facing the same problem of the Shortcut Virus in their pen drive.  Sometimes when we insert pen drives and memory card in a USB port for the data transfer, then the files in your pen drive and memory cards turns into shortcut virus. This  is the most common problem for all. We see this virus in the systems which have anti-virus installed. When your PC, pen drive and memory cards got affected by any malware, then it will change all your original files into folders. So many people will face this problem. We can easily remove shortcut virus from [Pendrive](/), just follow the bellow steps.
 
 Click on “Start” –>Run –> type cmd and click on OK.
 
