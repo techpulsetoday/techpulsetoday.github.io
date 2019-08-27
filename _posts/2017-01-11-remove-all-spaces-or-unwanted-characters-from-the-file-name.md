@@ -7,7 +7,7 @@ tags: [Linux Tips, Tips and Tricks]
 image: assets/images/2017/01/Remove-all-spaces-or-unwanted-characters-from-the-file-name.png
 description: "Remove all spaces or unwanted characters from the file name, and it becomes annoying to access these files from the terminal."
 ---
-Often, there are multiple spaces or unwanted characters in the file name, and it becomes annoying to access these files from the terminal. We can remove spaces from file name manually, but it becomes a tedious task when there are a large number of files involved. Fortunately, GNU/Linux has a <a href="https://www.techpulsetoday.com/search-replace-string-file-name/">command</a> that solves this problem. This is the "<strong>rename</strong>" command, Which renames the filenames supplied according to the rule specified as the first argument. Let us understand this with a simple example.
+Often, there are multiple spaces or unwanted characters in the file name, and it becomes annoying to access these files from the terminal. We can remove spaces from file name manually, but it becomes a tedious task when there are a large number of files involved. Fortunately, GNU/Linux has a <a href="https://techpulsetoday.com/search-replace-string-file-name/">command</a> that solves this problem. This is the "<strong>rename</strong>" command, Which renames the filenames supplied according to the rule specified as the first argument. Let us understand this with a simple example.
 
 Shown below are the files whose names contain spaces:
 <pre class="lang:default decode:true">vijayan@vijayan-VPCCA35FA:~/Downloads/techpulsetoday$ ls -lash

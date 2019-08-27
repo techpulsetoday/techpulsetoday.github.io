@@ -86,7 +86,7 @@ add_action( 'login_head', 'custom_login_logo' );
 ```php
 // Modify Admin Footer Text
 function modify_footer() {
-    echo 'Created by <a href="https://www.techpulsetoday.com/" target=_blank>TechPulseToday</a>.';
+    echo 'Created by <a href="https://techpulsetoday.com/" target=_blank>TechPulseToday</a>.';
 }
 add_filter( 'admin_footer_text', 'modify_footer' );
 ```

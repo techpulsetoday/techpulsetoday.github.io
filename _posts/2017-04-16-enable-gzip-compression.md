@@ -133,7 +133,7 @@ You can use the Forge Nginx restart dropdown, but since you’re SSH’ed in you
 ### To test if gzip compression is enabled, run
 
 ```bash
-curl -H "Accept-Encoding: gzip" -I https://www.techpulsetoday.com/
+curl -H "Accept-Encoding: gzip" -I https://techpulsetoday.com/
 ```
 
 You should see **content-encoding: gzip**

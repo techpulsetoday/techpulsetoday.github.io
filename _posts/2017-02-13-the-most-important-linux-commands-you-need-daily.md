@@ -490,7 +490,7 @@ total 5.3M
 </tr>
 <tr>
 <td>sed ‘s/abc/def/g’ file</td>
-<td><a href="https://www.techpulsetoday.com/search-replace-string-file-name/">Replace</a> all occurrence of abc with def, out to stdout</td>
+<td><a href="https://techpulsetoday.com/search-replace-string-file-name/">Replace</a> all occurrence of abc with def, out to stdout</td>
 </tr>
 <tr>
 <td>cut -d “ “ -f N file</td>

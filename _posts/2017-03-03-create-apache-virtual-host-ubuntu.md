@@ -6,6 +6,9 @@ categories: [ Linux ]
 tags: [ Apache, Linux Tips, Server, Virtual Host ]
 image: assets/images/2017/03/vitual-host.png
 description: "How To Create Apache Virtual Host in Ubuntu. This article will help you to create Virtual hosts in Apache2 server on Ubuntu systems."
+featured: true
+hidden: true
+rating: 4.5
 toc: true
 ---
 Before Create Apache Virtual Host files, we need to check in your system whether Apache Server installed or not. If it is installed no need to anything. If it is not installed type the following commands.
