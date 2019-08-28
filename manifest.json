@@ -1,9 +1,13 @@
 {
     "name": "TechPulseToday",
     "short_name": "TechPulseToday",
+    "description": "Taking Web Out Of The Box",
+    "lang": "en-IN",
     "theme_color": "#ffffff",
     "background_color": "#2196f3",
-    "display": "browser",
+    "display": "standalone",
+    "orientation": "any",
+    "prefer_related_applications": false,
     "Scope": "/",
     "start_url": "/",
     "icons": [
@@ -42,7 +46,12 @@
             "sizes": "192x192",
             "type": "image\/png",
             "density": "4.0"
+        },
+        {
+            "src": "/assets/images/android-icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "density": "5.0"
         }
-    ],
-    "splash_pages": null
+    ]
 }
