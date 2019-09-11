@@ -55,7 +55,7 @@ E: Method /usr/lib/apt/methods/http did not start correctly
 
 > This appears to only affect those using PHP from launchpad.net/~ondrej
 
-## How to fix it
+## Temporary solution
 
 1. Download [this file](http://ftp.us.debian.org/debian/pool/main/libi/libidn2/libidn2-0_2.0.5-1_amd64.deb "libidn2-0_2.0.5-1_amd64.deb") to the machine.
 2. sudo dpkg -i <path/to/.deb>
@@ -81,3 +81,9 @@ E: Method /usr/lib/apt/methods/http did not start correctly
 ```sh
 apt-mark showhold
 ```
+
+## Permanent solution
+
+Apparently it has already been fixed. Try running `sudo apt update` and then `apt policy libidn2-0` to see if you get the fixed version `2.2.0-2+ubuntu18.04.1+deb.sury.org+1`. Only run `sudo apt upgrade` (or `full-upgrade` or `dist-upgrade`) if you get that new version.
+
+Looks like this issue [https://github.com/oerdnj/deb.sury.org/issues/1247](https://github.com/oerdnj/deb.sury.org/issues/1247).
