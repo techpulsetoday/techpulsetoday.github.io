@@ -86,4 +86,4 @@ apt-mark showhold
 
 Apparently it has already been fixed. Try running `sudo apt update` and then `apt policy libidn2-0` to see if you get the fixed version `2.2.0-2+ubuntu18.04.1+deb.sury.org+1`. Only run `sudo apt upgrade` (or `full-upgrade` or `dist-upgrade`) if you get that new version.
 
-Looks like this issue [https://github.com/oerdnj/deb.sury.org/issues/1247](https://github.com/oerdnj/deb.sury.org/issues/1247).
+Looks like this issue [https://github.com/oerdnj](https://github.com/oerdnj/deb.sury.org/issues/1247).

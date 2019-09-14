@@ -6,8 +6,6 @@ categories: [ Linux ]
 tags: [Apache, Linux Tips, PHPMyAdmin was not found]
 image: assets/images/2016/12/phpmyadmin.png
 description: "If you get a 404 error(the requested url /phpmyadmin was not found on this server.)upon visiting http://localhost/phpmyadmin: You will need to configure apache2.conf to work with PHPMyAdmin."
-featured: true
-hidden: true
 rating: 5
 toc: true
 ---
