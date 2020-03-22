@@ -19,3 +19,6 @@ group :jekyll_plugins do
     gem 'rouge'
     gem 'jekyll-gist'
 end
+
+# Install jekyll-admin
+gem 'jekyll-admin', group: :jekyll_plugins

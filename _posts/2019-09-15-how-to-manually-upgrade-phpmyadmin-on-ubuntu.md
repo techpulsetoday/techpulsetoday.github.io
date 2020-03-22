@@ -1,16 +1,20 @@
 ---
+title: How to Manually Upgrade phpMyAdmin on Ubuntu
 layout: post
-title:  "How to Manually Upgrade phpMyAdmin on Ubuntu"
 author: vijayan
-categories: [ Linux ]
-tags: [ Linux-Tips ]
+categories:
+- Linux
+tags:
+- Linux-Tips
 image: assets/images/2019/09/phpmyadmin-4-9-0-1.png
-description: "phpMyAdmin is a most popular MySQL client to access and manage your database. The phpMyAdmin installation via apt package manager create multiple directories."
+description: phpMyAdmin is a most popular MySQL client to access and manage your database.
+  The phpMyAdmin installation via apt package manager create multiple directories.
 featured: true
 hidden: true
 rating: 5
 toc: true
 ---
+
 phpMyAdmin is a most popular MySQL client to access and manage your database. The phpMyAdmin installation via apt package manager create multiple directories (`sudo apt-get install phpmyadmin`).
 
 1. /usr/share/phpmyadmin – Main phpMyAdmin installation
@@ -62,8 +66,8 @@ define('CONFIG_DIR', '/etc/phpmyadmin/');
 ## Easiest method to update the configuration file
 
 ```sh
-sed -i "s+'TEMP_DIR', './tmp/'+'TEMP_DIR', '/var/lib/phpmyadmin/tmp/'+g" /usr/share/phpmyadmin/libraries/vendor_config.php
-sed -i "s+'CONFIG_DIR', ''+'CONFIG_DIR', '/etc/phpmyadmin/'+g" /usr/share/phpmyadmin/libraries/vendor_config.php
+sed -i "s+'TEMP_DIR', ROOT_PATH . 'tmp/'+'TEMP_DIR', '/var/lib/phpmyadmin/tmp/'+g" /usr/share/phpmyadmin/libraries/vendor_config.php
+sed -i "s+'CONFIG_DIR', ROOT_PATH+'CONFIG_DIR', '/etc/phpmyadmin/'+g" /usr/share/phpmyadmin/libraries/vendor_config.php
 ```
 
 You don't need to install anything. Just execute bash script from a remote site.
